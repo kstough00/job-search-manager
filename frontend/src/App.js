@@ -4,12 +4,13 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Home from './components/Home';
 import PositionIndex from './components/PositionIndex';
 import PositionForm from './components/PositionForm';
- 
+import Nav from './components/Nav'
 
 function App() {
   return (
     <div className="App">
       <Router>
+        <Nav />
         <Switch>
           <Route exact path="/" component={Home}/>
           <Route exact path="/positions" component={PositionIndex}/>
