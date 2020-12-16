@@ -1,10 +1,9 @@
 function positionReducer(state = { all: [] }, action) {
-    switch(action.type) {
-        case "FETCH_POSITIONS_SUCCESS" :
-            return {...state, positions: action.payload };
+    switch (action.type) {
+        case "FETCH_POSITIONS_SUCCESS":
+            return { ...state, all: action.payload };
         default:
             return state;
-        
     }
 }
 
