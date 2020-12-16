@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { getPositions } from '../redux/actions/positionActions'
+import PositionListItem from './PositionListItem'
 
 class PositionIndex extends React.Component {
     componentDidMount() {
@@ -10,6 +11,9 @@ class PositionIndex extends React.Component {
         return (
             <div>
                 <h1>My applied Positions</h1>
+                {this.props.positions.map((position) => (
+                    <PositionListItem position={position} />
+                ))}
             </div>
         )
     }
