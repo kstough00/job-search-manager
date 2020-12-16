@@ -9,7 +9,7 @@ export default function Nav() {
                     <Link to="/">Home </Link>
                 </li>
                 <li>
-                    <Link to="/positions">Positions </Link>
+                    <Link to="/positions">My Positions </Link>
                 </li>
                 <li>
                     <Link to="/positions/new">Add applied Position </Link>
