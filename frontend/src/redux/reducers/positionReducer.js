@@ -1,4 +1,4 @@
-function positionReducer(state = { positions: [] }, action) {
+function positionReducer(state = { all: [] }, action) {
     switch(action.type) {
         case "FETCH_POSITIONS_SUCCESS" :
             return {...state, positions: action.payload };
