@@ -1,9 +1,12 @@
 import React from 'react'
+import { connect } from 'react-redux'
 
-export default function PositionIndex() {
-    return (
-        <div>
-            <h1>My applied Positions</h1>
-        </div>
-    )
+class PositionIndex extends React.Component {
+    render() {
+        return (
+            <div>
+                <h1>My applied Positions</h1>
+            </div>
+        )
+    }
 }
