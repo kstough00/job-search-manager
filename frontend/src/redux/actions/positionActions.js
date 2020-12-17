@@ -27,9 +27,9 @@ export const createPosition = data => {
 export const deletePosition = (positionId) => {
     return (dispatch) => {
         fetch(`http://localhost:3001/positions/${positionId}`, {
-            method: 'DELETE'
+            method: "DELETE"
         })
-            .then(res => res.json())
-            .then(id =>
-    }
-}
+            .then((res) => res.json())
+            .then((id) => console.log(id));
+    };
+};

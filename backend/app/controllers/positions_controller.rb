@@ -35,7 +35,11 @@ class PositionsController < ApplicationController
 
   # DELETE /positions/1
   def destroy
-    @position.destroy
+    # @position.destroy
+    position = Position.find(params[:id])
+    if position.destroy
+      render json: {id: position.id}
+    end
   end
 
   private
