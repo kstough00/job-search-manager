@@ -7,3 +7,17 @@ export const getPositions = () => {
         );
     };
 };
+
+export const createPosition = data => {
+    return dispatch => {
+        const position = { position: data };
+        fetch(`http://localhost:3001/positions`, {
+            method: 'POST',
+            body: JSON.stringify(position),
+        })
+        .then((res) => res.json())
+        .then((position) => 
+        dispatch({ type: "CREATE_POSITION_SUCCESS", payload: position })
+        );
+    }
+}
