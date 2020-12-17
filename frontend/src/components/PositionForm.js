@@ -1,6 +1,8 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
+import { createPosition } from "../redux/actions/positionActions";
+import { connect } from 'react-redux'
 
-export default class PositionForm extends Component {
+class PositionForm extends Component {
     state = {
         title: "",
         company: "",
@@ -9,6 +11,7 @@ export default class PositionForm extends Component {
 
     submit = (e) => {
         e.preventDefault();
+        this.props.createPosition(this.state)
         this.setState({
             title: "",
             company: "",
@@ -45,3 +48,5 @@ export default class PositionForm extends Component {
         )
     }
 }
+
+export default connect(null, { createPosition })(PositionForm);

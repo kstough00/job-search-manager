@@ -9,11 +9,13 @@ export const getPositions = () => {
 };
 
 export const createPosition = data => {
-    return dispatch => {
-        const position = { position: data };
+    return (dispatch) => {
         fetch(`http://localhost:3001/positions`, {
             method: 'POST',
-            body: JSON.stringify(position),
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ position: data }),
         })
         .then((res) => res.json())
         .then((position) => 
