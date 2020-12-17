@@ -3,7 +3,9 @@ import React from 'react'
 export default function PositionListItem({ position }) {
     return (
         <div>
-            {position.title} - {position.company} - ${position.salary}
+            <ul>
+                <h5>{position.title}</h5> - {position.company} - ${position.salary}
+            </ul>
         </div>
     )
 }

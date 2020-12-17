@@ -10,7 +10,7 @@ class PositionIndex extends React.Component {
     render() {
         return (
             <div>
-                <h1>My applied Positions</h1>
+                <h1>My Positions: </h1>
                 {this.props.positions.map((position) => (
                     <PositionListItem position={position} />
                 ))}

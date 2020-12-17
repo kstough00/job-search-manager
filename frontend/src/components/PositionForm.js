@@ -17,6 +17,7 @@ class PositionForm extends Component {
             company: "",
             salary: "",
         });
+        this.props.history.push("/positions");
     };
     
     render() {
