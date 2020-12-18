@@ -12,7 +12,7 @@ class PositionIndex extends React.Component {
             <div>
                 <h1>My Positions: </h1>
                 {this.props.positions.map((position) => (
-                    <PositionListItem position={position} />
+                    <PositionListItem key={position.id} position={position} />
                 ))}
             </div>
         )
