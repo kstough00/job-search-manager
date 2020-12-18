@@ -4,7 +4,10 @@ function positionReducer(state = { all: [] }, action) {
             return { ...state, all: action.payload };
         
         case "CREATE_POSITION_SUCCESS":
-            return {...state, all: state.all.concat(action.payload)}
+            return { ...state, all: state.all.concat(action.payload) }
+        
+        case "DELETE_POSITION":
+            return {...state, all: state.all.filter((position) => position.id !== action.payload)}
         default:
             return state;
     }
