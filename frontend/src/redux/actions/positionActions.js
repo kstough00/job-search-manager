@@ -34,12 +34,12 @@ export const deletePosition = (positionId) => {
   };
 };
 
-export const getPosition = (positionId) => {
-  return (dispatch) => {
-    fetch(`http://localhost:3001/positions/${positionId}`)
-      .then((res) => res.json())
-      .then((position) =>
-        dispatch({ type: "FETCH_POSITION_SUCCESS", payload: position })
-      );
-  };
-};
+// export const getPosition = () => {
+//   return (dispatch) => {
+//     fetch(`http://localhost:3001/positions/:id`)
+//       .then((res) => res.json())
+//       .then((position) =>
+//         dispatch({ type: "FETCH_POSITION_SUCCESS", payload: position })
+//       );
+//   };
+// };
