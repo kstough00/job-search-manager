@@ -16,7 +16,7 @@ function App() {
           <Route exact path="/" component={Home} />
           <Route exact path="/positions" component={PositionIndex} />
           <Route path="/positions/new" component={PositionForm} />
-          <Route exact path="/positions/:id" component={PositionShow} />
+          <Route path="/positions/:id" component={PositionShow} />
         </Switch>
       </Router>
     </div>
