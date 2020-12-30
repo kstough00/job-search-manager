@@ -12,11 +12,8 @@ function positionReducer(state = { all: [] }, action) {
         all: state.all.filter((position) => position.id !== action.payload),
       };
 
-    // case "FETCH_POSITION_SUCCESS":
-    //   return { ...state, all: action.payload };
-
     default:
-      return state;
+      return state; //returns state if there is no change
   }
 }
 
