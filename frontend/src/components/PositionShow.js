@@ -1,30 +1,7 @@
-// import React from "react";
-// import { connect } from "react-redux";
-// import { getPosition } from "../redux/actions/positionActions";
-// import { FaTrash } from "react-icons/fa";
-// import { deletePosition } from "../redux/actions/positionActions";
-// import PositionListItem from "./PositionListItem";
-
-// function PositionShow({ position, deletePosition }) {
-//   const submitDelete = () => {
-//     deletePosition(position.id);
-//   };
-//   return (
-//     <div>
-//       <ul>
-//         Company: {position.company} - ${position.salary}
-//         <FaTrash onClick={submitDelete} style={{ cursor: "pointer" }} />
-//       </ul>
-//     </div>
-//   );
-// }
-
-// export default connect(null, { deletePosition })(PositionShow);
-
 import React from "react";
-import PositionListItem from "./PositionListItem";
 import { connect } from "react-redux";
 import PositionIndex from "./PositionIndex";
+import TaskToggle from "./TaskToggle";
 
 class PositionShow extends React.Component {
   render() {
@@ -32,6 +9,23 @@ class PositionShow extends React.Component {
       <div>
         <h1>Position</h1>
         {this.props.position.title}
+        <h2>Company - Salary</h2>
+        {this.props.position.company} - ${this.props.position.salary}
+        <div>
+          <h1>Tasks: </h1>
+          <ul>
+            Submit Resume <TaskToggle />
+          </ul>
+          <ul>
+            Send follow up Email <TaskToggle />
+          </ul>
+          <ul>
+            Interview Process <TaskToggle />
+          </ul>
+          <ul>
+            Offer Accepted <TaskToggle />
+          </ul>
+        </div>
       </div>
     );
   }
