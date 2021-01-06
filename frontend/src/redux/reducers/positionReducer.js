@@ -18,3 +18,12 @@ function positionReducer(state = { all: [] }, action) {
 }
 
 export default positionReducer;
+
+// case "EDIT_POSITION":
+//       return state.map((position) => {
+//         if (position.id != action.payload.id) {
+//           return position;
+//         } else {
+//           return action.payload;
+//         }
+//       });

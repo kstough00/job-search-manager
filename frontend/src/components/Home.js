@@ -1,15 +1,8 @@
-import React from "react"; //imports react library from react
-import PositionListItem from "./PositionListItem";
+import React from "react";
 
 export default function Home() {
   return (
-    <div
-      style={{
-        backgroundImage: "url(" + "" + ")",
-        backgroundPosition: "center",
-        backgroundSize: "cover",
-      }}
-    >
+    <div>
       <h1>Welcome To Job Search Manager!</h1>
       <h4>
         Tired of organizing miscellaneous notes or maticulously updating your
@@ -18,7 +11,8 @@ export default function Home() {
         organized, and stress free. Manage your applied positions details and
         keep track of your application progress all in one place!
       </h4>
-      New Positions this Week: {PositionListItem.call.length}
+      <h4> New Positions this Week: 17 </h4>
+      <br></br>
       <br></br>
       <p></p>
       <img src="https://images.techhive.com/images/article/2016/11/technology_resume-100690687-large.jpg"></img>

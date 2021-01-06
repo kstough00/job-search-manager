@@ -1,5 +1,5 @@
-import React from "react"; //imports react library from react
-import { Link } from "react-router-dom"; //import link to make use of link functionality on our webpage
+import React from "react";
+import { Link } from "react-router-dom";
 
 export default function Nav() {
   return (
