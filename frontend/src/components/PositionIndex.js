@@ -5,8 +5,9 @@ import PositionListItem from "./PositionListItem";
 
 class PositionIndex extends React.Component {
   componentDidMount() {
-    this.props.getPositions();
+    this.props.boundGetPositions();
   }
+
   render() {
     return (
       <div>
@@ -20,10 +21,15 @@ class PositionIndex extends React.Component {
 }
 
 const mapStateToProps = ({ positions }) => {
-  //mapstatetoprops has access to our state 'positions'
   return {
-    positions: positions.all, // then we return our state
+    positions: positions.all,
   };
 };
 
-export default connect(mapStateToProps, { getPositions })(PositionIndex);
+const mapDispatchToProps = (dispatch) => {
+  return {
+    boundGetPositions: () => dispatch(getPositions()),
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(PositionIndex);

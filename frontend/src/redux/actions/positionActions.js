@@ -1,3 +1,5 @@
+
+
 export const getPositions = () => {
   return (dispatch) => {
     fetch(`http://localhost:3001/positions`)
@@ -33,6 +35,11 @@ export const deletePosition = (positionId) => {
       .then(({ id }) => dispatch({ type: "DELETE_POSITION", payload: id }));
   };
 };
+
+
+
+
+
 
 // export const getPosition = () => {
 //   return (dispatch) => {

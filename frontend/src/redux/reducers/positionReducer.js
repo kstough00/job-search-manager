@@ -13,7 +13,7 @@ function positionReducer(state = { all: [] }, action) {
       };
 
     default:
-      return state; //returns state if there is no change
+      return state;
   }
 }
 

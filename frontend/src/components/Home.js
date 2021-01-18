@@ -8,8 +8,8 @@ export default function Home() {
         Tired of organizing miscellaneous notes or maticulously updating your
         Excel spreadsheet when searching for a job? Job Search Manager is the
         only application you will need to make your job search simple,
-        organized, and stress free. Manage your applied positions details and
-        keep track of your application progress all in one place!
+        organized, and stress free. Track your applied positions details and log
+        your application progress all in one place!
       </h4>
       <h4> New Positions this Week: 17 </h4>
       <br></br>
