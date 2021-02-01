@@ -1,0 +1,147 @@
+function positionReducer(state = [], action) {
+  switch (action.type) {
+    case "FETCH_POSITIONS_SUCCESS":
+      return action.payload;
+    case "CREATE_POSITION_SUCCESS":
+      return state.concat(action.payload);
+    case "EDIT_POSITION":
+      return state.map((position) => {
+        if (position.id != action.payload.id) {
+          return position;
+        } else {
+          return action.payload;
+        }
+      });
+    case "DELETE_POSITION":
+      return state.filter((position) => position.id !== action.payload);
+    default:
+      return state; //returns state if there is no change
+  }
+}
+
+export default positionReducer;
+
+// action is an object
+// action has a type attribute
+// the value for type should be a string. probably will match a case, or default will run instead
+
+// function arrayChanger(action, store) {
+//   store.state = positionReducer(store.state, action);
+// }
+
+// store.prevStates = [];
+// function dispatch(action) {
+
+//   //thunk checks if action is an object. if so, then:
+//   store.prevStates.push(store.state);
+//   arrayChanger(action, store);
+
+//   //else
+//   // action(dispatch)
+// }
+
+// dispatch(fetchPositions());
+
+
+
+import React, { Component } from "react";
+
+class Counter extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      number: 0,
+    };
+  }
+
+  toggleNumber = () => {
+    this.setState({
+      number: this.state.number + 1,
+    });
+  };
+
+  render() {
+    return (
+      <div>
+        <button onClick={this.toggleNumber}> Click me!</button>
+        {this.state.number}
+      </div>
+    );
+  }
+}
+
+export default Counter;
+
+
+constructor() {
+    super();
+    this.state = {
+      checkbox: isChecked,
+    };
+  }
+
+  toggleCheckbox(e) {
+    this.setState({ checkbox: !this.state.isChecked });
+  }
+
+  render() {
+    let sortPositions = this.props.positions.sort((positions) => {
+      return (positions.title.sort
+    }
+    return (
+      <div>
+          <h1>My Positions: </h1>
+          <button onClick={this.sortPositions}> Sort</button>
+        {sortPositions.positions.map((position) => (
+          <PositionListItem key={position.id} position={position} />
+        ))}
+      </div>
+    );
+  }
+}
+
+
+Sort
+
+constructor(props) {
+    super(props);
+    this.state = {
+      sort: false,
+    };
+  }
+
+  handleClick = () => {
+    this.setState((state) => ({
+      sort: !state.sort,
+    }));
+  };
+
+  sortedPositions = () => {
+    return [...this.props.positions].sort(function (a, b) {
+      let titleA = a.title.toUpperCase();
+      let titleB = b.title.toUpperCase();
+      if (titleA < titleB) {
+        return -1;
+      }
+      if (titleA > titleB) {
+        return 1;
+      }
+      return 0;
+    });
+  };
+
+  render() {
+    return (
+      <div>
+        <h1>My Positions: </h1>
+        <button onClick={this.handleClick.bind(this)}>sort</button>
+        {(this.state.sort ? this.sortedPositions() : this.props.positions).map(
+          (position) => (
+            <PositionListItem position={position} key={position.id} />
+          )
+        )}
+      </div>
+    );
+  }
+}
+

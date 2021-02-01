@@ -2,6 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import PositionIndex from "./PositionIndex";
 import TaskToggle from "./TaskToggle";
+import Counter from "./Counter";
 
 class PositionShow extends React.Component {
   render() {
@@ -25,6 +26,7 @@ class PositionShow extends React.Component {
           <ul>
             Offer Accepted <TaskToggle />
           </ul>
+          <Counter />
         </div>
       </div>
     );

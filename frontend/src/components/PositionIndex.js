@@ -8,13 +8,40 @@ class PositionIndex extends React.Component {
     this.props.boundGetPositions();
   }
 
+  state = {
+    sort: false,
+  };
+
+  handleClick = () => {
+    this.setState((state) => ({
+      sort: !state.sort,
+    }));
+  };
+
+  sortedPositions = () => {
+    return [...this.props.positions].sort(function (a, b) {
+      let titleA = a.title.toUpperCase();
+      let titleB = b.title.toUpperCase();
+      if (titleA < titleB) {
+        return -1;
+      }
+      if (titleA > titleB) {
+        return 1;
+      }
+      return 0;
+    });
+  };
+
   render() {
     return (
       <div>
         <h1>My Positions: </h1>
-        {this.props.positions.map((position) => (
-          <PositionListItem key={position.id} position={position} />
-        ))}
+        <button onClick={this.handleClick}>Sort</button>
+        {(this.state.sort ? this.sortedPositions() : this.props.positions).map(
+          (position) => (
+            <PositionListItem key={position.id} position={position} />
+          )
+        )}
       </div>
     );
   }
