@@ -8,9 +8,17 @@ class PositionIndex extends React.Component {
     this.props.boundGetPositions();
   }
 
-  state = {
-    sort: false,
-  };
+  constructor() {
+    super();
+    this.state = {
+      sort: false,
+      search: "",
+    };
+  }
+
+  updateSearch(e) {
+    this.setState({ search: e.target.value });
+  }
 
   handleClick = () => {
     this.setState((state) => ({
@@ -33,11 +41,24 @@ class PositionIndex extends React.Component {
   };
 
   render() {
+    let filteredPositions = this.props.positions.filter((position) => {
+      return (
+        position.title
+          .toLowerCase()
+          .indexOf(this.state.search.toLowerCase()) !== -1
+      );
+    });
     return (
       <div>
         <h1>My Positions: </h1>
+        <input
+          type="text"
+          value={this.state.search}
+          onChange={this.updateSearch.bind(this)}
+        />
+        <br></br>
         <button onClick={this.handleClick}>Sort</button>
-        {(this.state.sort ? this.sortedPositions() : this.props.positions).map(
+        {(this.state.sort ? this.sortedPositions() : filteredPositions).map(
           (position) => (
             <PositionListItem key={position.id} position={position} />
           )
